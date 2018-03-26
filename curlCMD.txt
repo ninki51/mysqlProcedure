@@ -1,0 +1,54 @@
+curl 命令使用
+1、开启gzip请求
+curl -I http://www.sina.com.cn/ -H Accept-Encoding:gzip,defalte
+
+2、监控网页的响应时间
+curl -o /dev/null -s -w "time_connect: %{time_connect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" "http://www.kklinux.com"
+
+3. 监控站点可用性
+curl -o /dev/null -s -w %{http_code} "http://www.kklinux.com"
+使用cookie来记录session信息 
+　　$ curl -x 123.45.67.89：1080 -o page.html -D cookie0001.txt http://www.linuxidc.com 
+-C或--continue-at：断点续传，用法如下：
+curl -C http://www.example.com
+
+保存与使用网站cookie信息
+
+1 # 将网站的cookies信息保存到sugarcookies文件中
+2 curl -D sugarcookies http://localhost/sugarcrm/index.php
+3 
+4 # 使用上次保存的cookie信息
+5 curl -b sugarcookies http://localhost/sugarcrm/index.php
+x 选项可以为CURL添加代理功能
+
+1 # 指定代理主机和端口
+2 curl -x proxysever.test.com:3128 http://google.co.in
+curl -x 61.135.217.7:80 -b cookie.txt https://software-download.microsoft.com/pr/Win10_1709_China_GGK_Chinese\(Simplified\)_x64.iso?t=7fbdc6b4-9c0a-4184-a338-fdbc3edb7552&e=1517152187&h=cac6186a107d0beef0aa0438adf393cd --referer https://www.microsoft.com/zh-cn/software-download/windows10ISO
+查单词
+# 查询bash单词的含义
+curl dict://dict.org/d:bash
+
+# 列出所有可用词典
+curl dict://dict.org/show:db
+
+# 在foldoc词典中查询bash单词的含义
+curl dict://dict.org/d:bash:foldoc
+
+ # GET
+2 curl -u username https://api.github.com/user?access_token=XXXXXXXXXX
+3 
+4 # POST
+5 curl -u username --data "param1=value1&param2=value" https://api.github.com
+5. 设置referer
+
+
+有时候我们如果直接请求某个URL不能成功，它需要判断referer是否正确，那就可以通过-e或--referer参数模拟
+curl --referer http://www.example.com http://www.example.com
+6. 指定User Agent
+-A/--user-agent：伪装成指定的浏览器Chrome访问，用法：
+curl -A “Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36” http://www.example.com
+7. 伪造cookie
+-b或--cookie: 有两种用法，一是指定参数和值：curl --cookie "name=xxx" http://www.example.com ；二是从文件读取：curl -b /cookie.txt http://www.example.com
+8. 保存cookie
+-c/--cookie-jar：curl命令执行后保存操作时生成的cookie到文件：
+curl -c ./cookie.txt -d username=aaaa -d pwd=****** http://www.example.com 
