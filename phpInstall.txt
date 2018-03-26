@@ -12,3 +12,23 @@ vim /etc/php/7.2/fpm/pool.d/www.conf
 
 service nginx restart
 service php7.2-fpm restart
+
+
+安装mysql
+apt-get update
+apt-get install mysql-server
+systemctl start mysql
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+注释掉bind 127.0.0.1
+service mysql restart
+新建用户远程连接mysql数据库 
+grant all on *.* to admin@'%' identified by chenjian1234 with grant option; 
+flush privileges;
+
+安装Anaconda3
+wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+
+安装vsftp docker
+docker pull bogem/ftp
+运行ftp
+docker run -d -v /var/www/html:/home/vsftpd -p 20:20 -p 21:21 -p 47400-47470:47400-47470 -e FTP_USER=www -e FTP_PASS=12344321 -e PASV_ADDRESS=119.23.206.189 --name ftp --restart=always bogem/ftp
