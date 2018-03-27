@@ -1,0 +1,7 @@
+macos 下 ftp命令工具安装
+brew install inetutils
+用法：
+ftp 192.168.1.100
+put index.html
+mput *.css
+get detail.html
