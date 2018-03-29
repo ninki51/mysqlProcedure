@@ -22,7 +22,7 @@ vim /etc/mysql/mysql.conf.d/mysqld.cnf
 注释掉bind 127.0.0.1
 service mysql restart
 新建用户远程连接mysql数据库 
-grant all on *.* to admin@'%' identified by chenjian1234 with grant option; 
+grant all on *.* to admin@'%' identified by chen1234 with grant option; 
 flush privileges;
 
 安装Anaconda3
