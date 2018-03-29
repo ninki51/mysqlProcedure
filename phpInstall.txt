@@ -32,3 +32,11 @@ wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
 docker pull bogem/ftp
 运行ftp
 docker run -d -v /var/www/html:/home/vsftpd -p 20:20 -p 21:21 -p 47400-47470:47400-47470 -e FTP_USER=www -e FTP_PASS=12344321 -e PASV_ADDRESS=119.23.206.189 --name ftp --restart=always bogem/ftp
+
+mongodb
+启动
+systemctl start mongodb
+查看状态
+systemctl status mongodb
+运行命令修改目录权限：
+sudo chown -R mongodb:mongodb /var/lib/mongodb
