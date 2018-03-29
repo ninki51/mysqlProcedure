@@ -10,7 +10,7 @@ vim /etc/php/7.2/fpm/php.ini
 vim /etc/php/7.2/fpm/pool.d/www.conf
 // 配置这个 listen = /var/run/php7.2-fpm.sock
 
-service nginx restart
+service nginx restart (关闭的方法：nginx -s stop)
 service php7.2-fpm restart
 
 
