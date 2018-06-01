@@ -1,0 +1,10 @@
+git status -s
+ git commit -m "本次修改了注册部分代码。。。"
+ git push origin master
+
+
+ 其他命令
+把服务上最新代码更新到本地
+git pull
+把文件恢复到上个版本
+ git reset HEAD -- 文件名
