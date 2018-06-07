@@ -51,3 +51,5 @@ sudo apt-get install freetype-devel fontconfig-devel
 sudo apt-get install fontconfig
 运行
 phantomjs -v
+==========
+http://free-ss.cf/
