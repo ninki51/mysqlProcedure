@@ -1,0 +1,1 @@
+xorm reverse mysql root:ch1234567@(127.0.0.1:3306)/mydb?charset=utf8 D:\api\src\db\xorm
