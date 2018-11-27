@@ -24,3 +24,17 @@ INSERT INTO 新表 SELECT * FROM 旧表
 INSERT INTO 新表(字段1,字段2,.......) SELECT 字段1,字段2,...... FROM 旧表 
 
 安装完MySQL后 mysql_secure_installation
+
+
+安装mysql
+sudo apt-get install mysql-server
+sudo apt install mysql-client
+sudo apt install libmysqlclient-dev
+
+sudo netstat -tap | grep mysql
+
+grant all privileges on civilization.* to 'chenjian'@'%' with grant option;
+flush privileges;
+
+vim /etc/mysql/mysql.conf.d/mysqld.cnf
+注释到 bind-addrsss = 127.0.0.1
