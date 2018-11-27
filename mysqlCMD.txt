@@ -38,3 +38,5 @@ flush privileges;
 
 vim /etc/mysql/mysql.conf.d/mysqld.cnf
 注释到 bind-addrsss = 127.0.0.1
+
+service mysql restart
